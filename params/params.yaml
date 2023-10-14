@@ -1,1 +1,10 @@
-key: val
+# Model Configuration
+AUGMENTATION : True
+IMAGE_SIZE : [224, 224, 3]
+BATCH_SIZE : 16
+INCLUDE_TOP: false  # Whether to include the top (fully connected) layers
+EPOCHS: 1 
+CLASSES : 2
+WEIGHTS : imagenet
+LEARNING_RATE : 0.01
+
