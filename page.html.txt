@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Image Recognizer - MLOps Demo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='page.css') }}">
+</head>
+
+<body>
+    <div class="banner">
+        <div class="content">
+            <h1>Image Recognizer</h1>
+            <p>Try out the deployed image recognition model. <br> Upload an image and let the model identify its contents. </p>
+            <h2>Upload an Image</h2>
+            <br>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        {{message}}
+                    {% endfor %}
+                {% endif %}
+            {% endwith }
+
+            <form action="{{ url_for('recognize_image') }}" method="post" enctype="multipart/form-data">
+                <input type="file" id="fileinput" name="image"/>
+                <br>
+                <input type="submit" id="submitButton" value="Recognize"/>
+            </form>
+
+            {% if recognized_objects %}
+                <div id="ResultContainer">
+                    <h3 id="RecognizedObjects">{{recognized_objects}}</h3>
+                    <br>
+                    <h3 id="Confidence">{{confidence}}</h3>
+                </div>
+            {% endif %}
+
+        </div>
+    </div>
+</body>
+</html>

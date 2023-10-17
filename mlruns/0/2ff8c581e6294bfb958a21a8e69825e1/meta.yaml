@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Hinnovis/Desktop/Kidney_Diseease_Classification_MLFLOW_DVC/mlruns/0/2ff8c581e6294bfb958a21a8e69825e1/artifacts
+end_time: 1697463549910
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 2ff8c581e6294bfb958a21a8e69825e1
+run_name: traveling-hog-332
+run_uuid: 2ff8c581e6294bfb958a21a8e69825e1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1697463528232
+status: 3
+tags: []
+user_id: Hinnovis

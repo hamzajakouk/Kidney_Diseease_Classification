@@ -1,8 +1,6 @@
 from cnnClassifier.config.configuration import ConfigurationManager
 from cnnClassifier.components.prepare_base_model import PrepareBaseModel
-
-
-STAGE_NAME = 'Model Preperation stage'
+from cnnClassifier import logger
 
 class PrepareBaseModelTrainingPipeline:
     def __init__(self) -> None:
@@ -16,3 +14,14 @@ class PrepareBaseModelTrainingPipeline:
         prepare_base_model.update_base_model()
 
 
+
+STAGE_NAME = 'Prepare Base Model Stage'
+
+try:
+    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<<<<<<<") 
+    obj = PrepareBaseModelTrainingPipeline()
+    obj.main()
+    logger.info(f">>>>>>> stage {STAGE_NAME} finished <<<<<<<<<<<<")
+except Exception as e:
+    logger.exception(e)
+    raise e 

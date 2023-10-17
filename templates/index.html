@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Classification</title>
+    <link rel="stylesheet" href="your-stylesheet.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>Object Classification</h1>
+            <p>Try our image classification model. Upload an image to get predictions.</p>
+
+            <!-- Flash messages for notifications -->
+            <div id="flash-messages">
+                <!-- Messages will be displayed here -->
+            </div>
+
+            <!-- Image upload form -->
+            <form action="your-api-endpoint" method="post" enctype="multipart/form-data">
+                <input type="file" id="fileinput" name="file" accept="image/*" class="file-input">
+                <label for="fileinput" class="file-label">Select Image</label>
+                <button type="submit" id="submitButton" class="predict-button">Predict</button>
+            </form>
+            
+            <!-- Display prediction results if available -->
+            <div id="result-container" style="display: none;">
+                <h3 id="transcription">Predicted Object: <span id="recognized-object">Placeholder</span></h3>
+                <h3 id="probability">Probability: <span id="label-probability">0.00</span></h3>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Handle form submission
+            $("form").on("submit", function (e) {
+                e.preventDefault();
+                $("#loading").show();
+                // Use AJAX to submit the form and handle results
+                $.ajax({
+                    url: $(this).attr("action"),
+                    type: $(this).attr("method"),
+                    data: new FormData(this),
+                    processData: false,
+                    contentType: false,
+                    success: function (response) {
+                        $("#loading").hide();
+                        $("#result-container").show();
+                        $("#recognized-object").text(response.object);
+                        $("#label-probability").text(response.probability);
+                    },
+                    error: function (error) {
+                        $("#loading").hide();
+                        $("#flash-messages").html('<div class="alert alert-danger" role="alert">Error: ' + error.responseText + '</div>');
+                    }
+                });
+            });
+        });
+    </script>
+
+    <div id="loading" style="display: none;">
+        <div class="loader"></div>
+    </div>
+</body>
+</html>

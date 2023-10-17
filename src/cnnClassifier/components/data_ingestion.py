@@ -1,12 +1,12 @@
 import gdown
 import os
 import zipfile
+import os
+import zipfile
+import gdown
 from cnnClassifier import logger
-from src.cnnClassifier.utils.common import get_size
-from src.cnnClassifier.entity.config_entity import DataIngestionConfig
-import urllib.request as request
-from zipfile import ZipFile
-import tensorflow as tf  
+from cnnClassifier.utils.common import get_size
+from cnnClassifier.entity.config_entity import (DataIngestionConfig)
 
 class DataIngestion:
     def __init__(self, config:DataIngestionConfig):

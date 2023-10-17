@@ -17,3 +17,13 @@ class ModelTrainingTrainingPipeline:
         training_model.train_valid_generator()
         training_model.train()
     
+STAGE_NAME = 'Model Training stage'
+if __name__ == '__main__':
+    try:
+        logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<<<<<<<") 
+        obj = ModelTrainingTrainingPipeline()
+        obj.main()
+        logger.info(f">>>>>>> stage {STAGE_NAME} finished <<<<<<<<<<<<")
+    except Exception as e:
+        logger.exception(e)
+        raise e  
