@@ -26,7 +26,7 @@ This project establishes a pipeline that orchestrates the training of a comprehe
 |:--:|
 | <b>Figure 1a: App demo - Image of kidney input to app for predicting state from trained model artifact</b>|
 
-| ![input](./images/out.PNG) |
+| ![input](./images/out.png) |
 |:--:|
 | <b>Figure 1b: App demo - another example of affected Kidney</b>|
 
