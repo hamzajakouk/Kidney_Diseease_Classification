@@ -30,9 +30,7 @@ This project establishes a pipeline that orchestrates the training of a comprehe
 |:--:|
 | <b>Figure 1b: App demo - another example of affected Kidney</b>|
 
-_**Disclaimer:**_ <br>
-_1. This app is just a demo and not for realtime usage. The main objective is to get ML models into production in terms of deployment and CI/CD, from MLOps paradigm_. <br>
-_2. Additionally, due to some technical issues in the Heroku backend, the app currently crashes, so the Heroku app link is not provided as of now. It will be updated once the issues are solved and when the app is up and running_.
+
 ## Workflows
 1. Update config.yaml
 2. Update secrets.yaml [Optional]
@@ -44,6 +42,52 @@ _2. Additionally, due to some technical issues in the Heroku backend, the app cu
 8. Update the main.py
 9. Update the dvc.yaml
 10. app.py
+
+## VGG16: A Brief Overview
+
+### Introduction:
+- **VGG16** is a deep convolutional neural network.
+- Known for simplicity and effectiveness in computer vision.
+
+### Key Features:
+- 16-layer architecture, including 13 convolutional layers and 3 fully connected layers.
+- Uses small 3x3 convolutional kernels for feature extraction.
+- Widely used in image classification and object detection.
+
+### Advantages:
+- Simplicity and uniform structure.
+- Proven effectiveness in various computer vision tasks.
+
+### Challenges:
+- Large number of parameters can be computationally expensive.
+
+### Conclusion:
+- VGG16 remains a classic and valuable reference in deep learning.
+
+ _**Note:** This project is not core research-centric. So the model with validation accuracy of 82% used, may not be the best optimized one achieving state-of-the-art performance as hyperparameter tuning is not performed. They are out of the scope of this project, as the main objective is to develop an end-to-end pipeline from data preparation till deployment via CI/CD pipelines `(MLOps paradigm)`._
+
+### MLflow - Model tracking
+
+[MLflow](https://mlflow.org/) is an open source platform for managing end-to-end machine learning lifecycle. It provides functionality to track, log, register and deploy models. But in this project, MLflow is only used for experiment tracking and logging model artifacts with metrics and parameters. The **directory tree** is:
+
+```
+b49972533469474f8cfd65b9ab0184c0
+    ├───artifacts
+    │   └───model
+    │       └───data
+    │           └───model
+    │               ├───assets
+    │               └───variables
+    ├───metrics
+    ├───params
+    └───tags
+```
+[log_into_mlflow](./src/components/evaluation_model.py) provides the definition of `MLFlowTracker` user-defined dataclass which handles the entire MLflow tracking responsibility. It is implemented with the interface `ExperimentTracker(Protocol)` with the flexibility to be used for any logging. The tracking, logging of model artifacts, parameters etc. are done by `MLFlowTracker` class. for visualizition we use DagsHub as rmote ui fo our model tracking through which all model experiments (runs) can be viewed. The model selection process is done by:
+
+
+| ![model selection](./images/mlflow.png) |
+|:--:|
+| <b>Figure 3: Model selection via DagsHUb UI</b>|
 
 
 # How to run?
