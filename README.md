@@ -30,6 +30,84 @@ This project establishes a pipeline that orchestrates the training of a comprehe
 |:--:|
 | <b>Figure 1b: App demo - another example of affected Kidney</b>|
 
+## Directory Structure
+```
+├───.github
+│   └───workflows
+├───artifacts
+│   ├───data_ingestion
+│   │   └───datasets
+│   │       ├───Normal
+│   │       └───Tumor
+│   ├───prepare_base_model
+│   └───training
+├───config
+├───images
+├───Kidney_Diseease_Classification_MLFLOW_DVC.git
+│   ├───hooks
+│   ├───info
+│   ├───objects
+│   │   ├───info
+│   │   └───pack
+│   └───refs
+│       ├───heads
+│       └───tags
+├───logs
+├───mlruns
+│   ├───.trash
+│   └───0
+│       ├───2ff8c581e6294bfb958a21a8e69825e1
+│       │   ├───artifacts
+│       │   │   └───model
+│       │   │       └───data
+│       │   │           └───model
+│       │   │               ├───assets
+│       │   │               └───variables
+│       │   ├───metrics
+│       │   ├───params
+│       │   └───tags
+│       
+├───model
+├───params
+├───research
+├───src
+│   ├───cnnClassifier
+│   │   ├───components
+│   │   │   └───__pycache__
+│   │   ├───config
+│   │   │   └───__pycache__
+│   │   ├───constants
+│   │   │   └───__pycache__
+│   │   ├───entity
+│   │   │   └───__pycache__
+│   │   ├───pipeline
+│   │   │   ├───logs
+│   │   │   └───__pycache__
+│   │   ├───utils
+│   │   │   └───__pycache__
+│   │   └───__pycache__
+│   └───cnnClassifier.egg-info
+└───templates
+```
+## Motivation
+
+`Deep learning/Machine learning` or `AI` (in short) is the current hot topic which has its application in most of the fields and it's demand is increasing day-by-day. But at this point, the sad truth is - `Only very less percentage of ML/DL models makes into production`. That's when `MLOps` comes into the picture. 
+
+The major challenges with ML during development are:
+  - Development, training and deployment environment can be different leading to dependency hassles.
+  - Whenever input data changes, its becomes more tedious to reproduce the experiment.
+  - Experiment tracking and analyzing can mostly be difficult and challenging.
+  - Core ML code turn out to be spaghetti jungle which introduces lot of `boilerplate` codes.
+
+MLOps is a budding field that productionalize ML models. `ML/DL` being a core research field, still misses out the `deployment` paradigm which includes design principles, patterns, testing, code styles etc. This restricts the domain to be used in the production environment efficiently. To nullify this, MLOps integrates DevOps principles into ML domain and serves as an intersection point of `Machine learning`, `Datascience` and `DevOps`.
+
+## Description
+
+The kidney cancer classification project integrates research and development phases to leverage machine learning for precise disease diagnosis. It includes data processing, deep neural network training, and rigorous model evaluation. In the deployment phase, it utilizes web app development, Docker containerization, and cloud PaaS for scalable model access. Modern CI/CD practices ensure automated pipelines for continuous integration and reliable releases, aiming to enhance early kidney cancer detection and medical decision support.
+
+| ![flowchart](./images/chart.png) |
+|:--:|
+| <b>Figure 2: Project Workflow - Deployment with CI/CD</b>|
 
 ## Workflows
 1. Update config.yaml
