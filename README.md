@@ -163,7 +163,7 @@ b49972533469474f8cfd65b9ab0184c0
 [log_into_mlflow](./src/components/evaluation_model.py) provides the definition of `MLFlowTracker` user-defined dataclass which handles the entire MLflow tracking responsibility. It is implemented with the interface `ExperimentTracker(Protocol)` with the flexibility to be used for any logging. The tracking, logging of model artifacts, parameters etc. are done by `MLFlowTracker` class. for visualizition we use DagsHub as rmote ui fo our model tracking through which all model experiments (runs) can be viewed. The model selection process is done by:
 
 
-| ![model selection](./images/mlflow.png) |
+| ![model selection](./images/images/Screenshot 2023-10-19 154017.png) |
 |:--:|
 | <b>Figure 3: Model selection via DagsHUb UI</b>|
 
