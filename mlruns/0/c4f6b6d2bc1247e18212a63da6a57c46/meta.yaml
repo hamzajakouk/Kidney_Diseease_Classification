@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Hinnovis/Desktop/Kidney_Diseease_Classification_MLFLOW_DVC/mlruns/0/c4f6b6d2bc1247e18212a63da6a57c46/artifacts
+end_time: 1697570291414
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c4f6b6d2bc1247e18212a63da6a57c46
+run_name: powerful-eel-344
+run_uuid: c4f6b6d2bc1247e18212a63da6a57c46
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1697570276091
+status: 3
+tags: []
+user_id: Hinnovis

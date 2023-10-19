@@ -90,8 +90,8 @@ stages:
       size: 232
     - path: src/cnnClassifier/pipeline/stage_04_evaluation_model.py
       hash: md5
-      md5: 9872261ccbcd39940de51c7ccc4b347f
-      size: 992
+      md5: 5129a565db741852e3f3c776c8d6d428
+      size: 991
     outs:
     - path: scores.json
       hash: md5
