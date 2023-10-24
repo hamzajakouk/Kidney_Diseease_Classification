@@ -105,7 +105,7 @@ MLOps is a budding field that productionalize ML models. `ML/DL` being a core re
 
 The kidney cancer classification project integrates research and development phases to leverage machine learning for precise disease diagnosis. It includes data processing, deep neural network training, and rigorous model evaluation. In the deployment phase, it utilizes web app development, Docker containerization, and cloud PaaS for scalable model access. Modern CI/CD practices ensure automated pipelines for continuous integration and reliable releases, aiming to enhance early kidney cancer detection and medical decision support.
 
-| ![flowchart](./images/Beige Colorful Minimal Flowchart Infographic Graph (3).png) |
+| ![flowchart](./images/Beige.png) |
 |:--:|
 | <b>Figure 2: Project Workflow - Deployment with CI/CD</b>|
 
